@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasons Switcher</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        roboto: ["Roboto"]
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body>
+     <div>
+        <img id="seasonSmallImage" src="https://d2clawv67efefq.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-four-seasons-xs-img.png" class="season-image md:hidden w-full h-[85vh]" />
+        <img id="seasonMediumImage" src="https://d2clawv67efefq.cloudfront.net/ccbp-dynamic-webapps/seasons-switcher-four-seasons-md-img.png" class="season-image w-full h-[85vh] hidden md:block" />
+        <div class="flex flex-row justify-center mt-5 mb-5 gap-4">
+            <button id=springBtn onclick="onclickSpringBtn()" class="bg-green-700  h-[40px] w-[90px] rounded-md text-white">Spring</button>
+            <button id=summerBtn onclick="onclickSummerBtn()" class="bg-yellow-300 h-[40px] w-[90px] rounded-md text-white">Summer</button>
+            <button id=autumnBtn onclick="onclickAutumnBtn()" class="bg-red-700 h-[40px] w-[90px] rounded-md text-white">Autumn</button>
+            <button id=winterBtn onclick="onclickWinterBtn()" class="bg-[#739BD0] h-[40px] w-[90px] rounded-md text-white">Winter</button>
+        </div>
+    </div>
+</body>
+</html>
