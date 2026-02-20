@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        roboto: ["Roboto"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body>
+        <div class="flex flex-col justify-center h-screen text-center p-8 gap-4" id="clickCounterContainer">
+        <h1 class="text-6xl font-bold text-[#2d3a35]">The Button has been clicked <span class="text-[#c20a72]" id="counterValue">0</span> times</h1>
+        <p class="text-xl font-bold text-[#2d3a35]">Click the button to increase the count!</p>
+        <div class="flex justify-center gap-4">
+        <button class="text-xl p-4 bg-[#2563EB] w-[150px] h-[65px] active:bg-blue-800 rounded-md text-white hover:bg-blue-700" id="incrementButton">Click Me!</button>
+        <button class="text-xl p-4 bg-red-500 w-[150px] h-[65px] active:bg-red-800 rounded-md text-white hover:bg-red-700" id="resetButton">Reset</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
