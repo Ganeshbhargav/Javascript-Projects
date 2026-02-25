@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+     <p id="fuelLevel" class="text-4xl font-bold m-4">0</p>
+    <button id="reduceBtn" class="text-white bg-[#0967d2] text-sm rounded-md p-3 ml-2" onclick="onReduce()">
+        REDUCE FUEL
+    </button>
+    <button id="resetBtn" class="text-white bg-[#0967d2] text-sm rounded-md p-3" onclick="onReset()">
+        RESET
+    </button>
+    <button id="increaseBtn" class="text-white bg-[#0967d2] text-sm rounded-md p-3" onclick="onIncrease()">
+        INCREASE FUEL
+    </button>
+    <script src="script.js"></script>
+</body>
+</html>
