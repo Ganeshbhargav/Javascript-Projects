@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+     <div class="flex flex-col md:flex-row h-screen">
+        <div class="flex flex-col justify-center items-center md:w-[50%] bg-gray-100 p-4">
+            <h1 class="text-2xl md:text-3xl font-medium text-gray-800 mb-4 text-center">
+                Click the button below to change color
+            </h1>
+            <button id="button" class="w-40 bg-blue-600 text-white text-lg font-medium p-4 rounded-full shadow-md" onclick="onChangeBgColor()">
+                Click Me
+            </button>
+        </div>
+        <div id="bgContainer" class="md:w-[50%] h-full"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
