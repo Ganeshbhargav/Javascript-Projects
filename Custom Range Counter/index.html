@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Range Counter</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        breeserif: ["Bree Serif"]
+                    },
+                },
+            },
+        };
+    </script>
+
+</head>
+<body>
+    <div class="flex flex-col items-center pt-3">
+        <h1 class="text-2xl font-breeserif text-gray-600 text-center font-bold">
+            Custom Range Counter
+        </h1>
+        <div class="flex flex-col items-center mt-4">
+            <input id="fromUserInput" type="text" placeholder="Enter From Value" class="mt-3 pl-2 pr-2 pt-1 pb-1 border border-gray-500 rounded-sm" />
+            <input id="toUserInput" type="text" placeholder="Enter To Value" class="mt-3 pl-2 pr-2 pt-1 pb-1 border border-gray-500 rounded-sm" />
+            <button id="startBtn" class="bg-blue-500 text-white p-2 pl-3 pr-3 rounded-md mt-4 hover:bg-blue-700" onclick="onClickStart()">
+                Start
+            </button>
+            <p id="counterText" class="text-2xl mt-4 font-bold"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
