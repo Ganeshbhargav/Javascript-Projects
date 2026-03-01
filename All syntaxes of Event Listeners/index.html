@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All syntaxes of Event Listeners</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="text-center">
+      <p class="weather-text h-[30px] text-[20px] font-bold" id="weatherStatus"></p>
+      <button
+        id="sunnyBtn"
+        class="bg-[#fbbf24] text-[#ffffff] rounded p-2 mb-3"
+        onclick="onSunny()"
+      >
+        Sunny
+      </button>
+      <button id="rainyBtn" class="bg-[#3b82f6] text-[#ffffff] rounded p-2 mb-3">
+        Rainy
+      </button>
+      <button id="cloudyBtn" class="bg-[#6b7280] text-[#ffffff] rounded p-2 mb-3">
+        Cloudy
+      </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
