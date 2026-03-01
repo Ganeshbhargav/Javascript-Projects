@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        roboto: ["Roboto"]
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body>
+     <div class="m-6 font-['Roboto']">
+        <h1 class="text-4xl font-bold mb-8 text-center">Recipe Search Bar</h1>
+        <div class="mb-6">
+            <input type="text" id="recipeSearchInput"
+                class="h-12 w-96 border-4 border-green-600 rounded-2xl px-4 text-2xl" placeholder="Search recipes..." />
+        </div>
+        <div class="text-xl">
+            <label>Keys Pressed: </label>
+            <span id="keyPressCount" class="font-semibold">0</span>
+        </div>
+        <div class="text-xl mt-3">
+            <label>Recipe Key: </label>
+            <span id="recipeKey" class="font-semibold">0</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
