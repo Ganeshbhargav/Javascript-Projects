@@ -1,0 +1,28 @@
+body{
+    margin: 20px;
+}
+#employees{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 1rem
+}
+.employee-item{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px 10px;
+    border-radius: 10px;
+}
+
+.img-container{
+    width: 140px;
+    min-height: 120px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+.img-container img{
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
+}
+.img-container:hover img{
+    transform: scale(1.11);
+}
