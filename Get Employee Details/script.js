@@ -3,7 +3,7 @@
 fetch("https://reqres.in/api/users?page=2",{
     method: "GET",
     headers : {
-        "x-api-key": "reqres_b6ef0dbf53b9482fb5c8029ccce7b418"
+        "x-api-key": "apikey"
     }
 })
 .then(res => res.json())
