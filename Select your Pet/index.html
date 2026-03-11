@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select your Pet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              roboto: ["Roboto"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div class="max-w-screen-lg mr-auto ml-auto p-4">
+      <div class="flex flex-col items-center">
+        <div
+          class="bg-gradient-to-r from-[#d3d3d3] to-[#e0e0e0] rounded-[36px] pt-4 pb-4 p-2 m-4 w-full"
+        >
+          <h1
+            class="text-[#2d3a35] mb-3 font-bold font-roboto text-[36px] text-center"
+          >
+            Select your Pet
+          </h1>
+          <select
+            id="petSelect"
+            class="border border-gray-300 rounded p-2 w-full"
+          >
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="parrot">Parrot</option>
+            <option value="spider">Spider</option>
+            <option value="rabbit">Rabbit</option>
+          </select>
+          <div class="mt-4 flex flex-col justify-center items-center">
+            <img
+              class="w-[400px] h-[350px]"
+              id="petImg"
+              src="https://d2clawv67efefq.cloudfront.net/ccbp-dynamic-webapps/select-your-pet-dog-img.png"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
