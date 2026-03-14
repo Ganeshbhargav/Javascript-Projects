@@ -3,13 +3,14 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-Projects-yellow)
 ![HTML](https://img.shields.io/badge/HTML-5-orange)
 ![CSS](https://img.shields.io/badge/CSS-3-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
 
 A collection of **beginner to intermediate JavaScript projects** built using **HTML, CSS, and JavaScript**.
 
 These projects demonstrate practical implementation of **DOM manipulation, events, UI design, and interactive web development**.
 
 ---
+
+  [![Live Demo](https://img.shields.io/badge/Live-Demo-green)](https://javascript-projects-one-phi.vercel.app/)
 
 # 📌 About
 
