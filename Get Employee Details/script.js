@@ -1,26 +1,26 @@
-
-
-fetch("https://reqres.in/api/users?page=2",{
-    method: "GET",
-    headers : {
-        "x-api-key": "apikey"
-    }
+fetch("https://reqres.in/api/users?page=2")
+.then(function(res){
+    return res.json();
 })
-.then(res => res.json())
-.then(jsonData => displayEmployees(jsonData.data))
+.then(function(data){
+    displayEmployees(data.data);
+})
+.catch(function(error){
+    console.log("Fetch Error:", error);
+});
 
 function displayEmployees(employees){
-    employees.map((i)=>{
-        document.getElementById("employees").
-        innerHTML+=
-        `
+    let container = document.getElementById("employees");
+
+    employees.forEach(function(emp){
+        container.innerHTML += `
             <div class="employee-item">
-                 <p>Name: ${i.first_name} ${i.last_name}</p>
-                 <p>Email: ${i.email}</p>
-                 <div class="img-container">
-                 <img src="${i.avatar}"></img>
-                 </div>
+                <p>Name: ${emp.first_name} ${emp.last_name}</p>
+                <p>Email: ${emp.email}</p>
+                <div class="img-container">
+                    <img src="${emp.avatar}">
+                </div>
             </div>
-        `
-    })
+        `;
+    });
 }

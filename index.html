@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Projects Portfolio</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: radial-gradient(
+          ellipse at bottom,
+          #1b2735 0%,
+          #090a0f 100%
+        );
+        min-height: 100vh;
+        padding: 40px 20px;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 70px;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+        background: linear-gradient(90deg, #00dbde, #fc00ff, #00dbde);
+        background-size: 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientMove 6s infinite linear;
+      }
+
+      @keyframes gradientMove {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 300%;
+        }
+      }
+
+      .subtitle {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        color: #b8c5d6;
+      }
+
+      .search {
+        width: 100%;
+        padding: 12px 18px;
+        margin-top: 25px;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.08);
+        color: white;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .search:focus {
+        border-color: #00dbde;
+        box-shadow: 0 0 10px #00dbde;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .project-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 30px;
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      .project-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+      }
+
+      .project-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      .project-description {
+        color: #d0dae8;
+        margin-bottom: 20px;
+      }
+
+      .features-list {
+        list-style: none;
+        margin-bottom: 20px;
+      }
+
+      .features-list li {
+        font-size: 0.95rem;
+        padding: 4px 0;
+        color: #b8c5d6;
+      }
+
+      .features-list li:before {
+        content: "✓ ";
+        color: #a0c4ff;
+        font-weight: bold;
+      }
+
+      .view-project {
+        display: inline-block;
+        padding: 10px 25px;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.1);
+        animation: gradientMove 6s infinite linear;
+      }
+      .demo-btn{ 
+        background:linear-gradient(90deg, #00dbde, #fc00ff, #00dbde); 
+        background-size: 300%;
+        padding:8px 14px; 
+        border-radius:20px; 
+        text-decoration:none; 
+        color:white;
+         font-weight: 500;
+         }
+      
+        .github-btn{
+        display:inline-block;
+        padding:10px 20px;
+        border-radius:25px;
+        background: rgba(255, 255, 255, 0.1);
+        color:white;
+        text-decoration:none;
+        font-size:14px;
+        }
+      footer {
+        text-align: center;
+        margin-top: 60px;
+        color: #b8c5d6;
+        
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>JAVASCRIPT MINI PROJECTS</h1>
+        <p class="subtitle"></p>
+        <input
+          id="searchBar"
+          class="search"
+          placeholder="🔍 Search projects..."
+        />
+      </header>
+
+      <div id="projectsGrid" class="projects-grid"></div>
+
+      <footer>
+        <p>Built with HTML, CSS & JavaScript | Click any card to try it out!</p>
+        <p>Developed By <b>Ganesh Bhargav Arani</b></p>
+      </footer>
+    </div>
+
+    <script>
+      // Projects Data
+      const projects = [
+        {
+          title: "Addition Game",
+          icon: "➕",
+          description:
+            "A fun math game that generates two random numbers and asks the user to calculate their sum.",
+          features: [
+            "Generates random numbers every round",
+            "User enters the answer to check correctness",
+            "Displays success or retry message",
+            "Restart button to generate a new question",
+          ],
+          link: "./Addition Game/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Addition%20Game",
+        },
+        {
+          title: "Bomb Defuser",
+          icon: "💣",
+          description:
+            "A simple countdown game where the user must type the correct command to defuse the bomb before the timer reaches zero.",
+          features: [
+            "10-second countdown timer",
+            "User types a command to defuse the bomb",
+            "Press Enter to submit the command",
+            "Displays success or explosion message",
+          ],
+          link: "./Bomb Defuser/index.html",
+          github: "https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Bomb%20Defuser"
+          
+        },
+        {
+          title: "Button Maker",
+          icon: "🎨",
+          description:
+            "Create a custom button by changing background color, font color, font size, padding, and border radius in real time.",
+          features: [
+            "Customize button background color",
+            "Change font color and font size",
+            "Adjust padding and border radius",
+            "Live preview of the custom button",
+          ],
+          link: "./Button Maker/index.html",
+          github: "https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Button%20Maker"
+        },
+        {
+          title: "Simple Chatbot",
+          icon: "🤖",
+          description:
+            "A basic chatbot interface where users send messages and receive automatic replies.",
+          features: [
+            "User message input",
+            "Displays chat conversation",
+            "Random chatbot responses",
+            "Simple messaging UI",
+          ],
+          link: "./ChatBot/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/ChatBot"
+        },
+        {
+          title: "Light Switch",
+          icon: "💡",
+          description:
+            "A simple interactive project that turns a bulb ON and OFF using switch buttons while updating images and status text.",
+          features: [
+            "ON and OFF switch buttons",
+            "Bulb image changes",
+            "Cat image reacts to darkness",
+            "Displays switch status",
+          ],
+          link: "./Cat/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Cat"
+        },
+        {
+          title: "Tech Prize Reveal",
+          icon: "🎁",
+          description:
+            "A fun luck-based app that reveals a random tech prize value when the user clicks the reveal button.",
+          features: [
+            "Random prize generation",
+            "Reveal button interaction",
+            "Displays reward amount instantly",
+            "Simple gradient UI",
+          ],
+          link: "./Check Your Luck/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Check%20Your%20Luck"
+        },
+        {
+          title: "Click Counter",
+          icon: "🔢",
+          description:
+            "A simple counter app where users click a button to increase the count and reset it anytime.",
+          features: [
+            "Increment button to increase count",
+            "Reset button to set counter to zero",
+            "Real-time counter update",
+            "Simple and interactive UI",
+          ],
+          link: "./Click Counter/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Click%20Counter"
+        },
+        {
+          title: "Color Picker",
+          icon: "🎨",
+          description:
+            "Select different colors to instantly change the page background and view the selected hex color code.",
+          features: [
+            "Clickable color buttons",
+            "Changes page background instantly",
+            "Displays selected hex color code",
+            "Simple interactive UI",
+          ],
+          link: "./Color Picker/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Color%20Picker"
+        },
+        {
+          title: "Counter App",
+          icon: "📊",
+          description:
+            "A simple counter application that allows users to increase, decrease, and reset the counter value.",
+          features: [
+            "Increase counter value",
+            "Decrease counter value",
+            "Reset counter to zero",
+            "Color change based on action",
+          ],
+          link: "./Counter/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Counter"
+        },
+        {
+          title: "Custom Range Counter",
+          icon: "🔄",
+          description:
+            "Enter a starting and ending number to automatically count between them with a timed interval.",
+          features: [
+            "User input for start and end values",
+            "Automatic counting animation",
+            "1-second interval updates",
+            "Stops when the target number is reached",
+          ],
+          link: "./Custom Range Counter/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Custom%20Range%20Counter"
+        },
+        {
+          title: "Fuel Counter",
+          icon: "⛽",
+          description:
+            "A simple fuel level counter where users can increase, decrease, or reset the fuel value with dynamic increments.",
+          features: [
+            "Increase fuel level",
+            "Reduce fuel level",
+            "Reset fuel to zero",
+            "Different increment/decrement logic",
+          ],
+          link: "./Fuel Counter/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Fuel%20Counter"
+        },
+        {
+          title: "Guess The Number",
+          icon: "🎯",
+          description:
+            "A fun guessing game where the user tries to guess a randomly generated number between 1 and 100.",
+          features: [
+            "Random number generation",
+            "User input validation",
+            "Hints for too high or too low guesses",
+            "Instant result feedback",
+          ],
+          link: "./Guessing Game/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Guessing%20Game"
+        },
+        {
+          title: "Movie Streaming UI",
+          icon: "🎬",
+          description:
+            "A movie streaming website interface inspired by Bappam TV, displaying movie cards and categories with a modern responsive layout.",
+          features: [
+            "Movie cards with posters",
+            "Responsive grid layout",
+            "Modern streaming platform UI",
+            "Category based movie sections",
+          ],
+          link: "https://bappamtv.vercel.app/",
+          github:"https://github.com/Ganeshbhargav/bappamtv"
+        },
+        {
+          title: "Workout Stop Watch",
+          icon: "⏱️",
+          description:
+            "A simple workout stopwatch that tracks exercise time in minutes and seconds.",
+          features: [
+            "Start exercise timer",
+            "Pause during rest period",
+            "Live minute and second counter",
+            "Automatic reset after 60 minutes",
+          ],
+          link: "./Hourly Stop Watch/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Hourly%20Stop%20Watch"
+        },
+        {
+          title: "HTTP GET Request Demo",
+          icon: "🌐",
+          description:
+            "A simple web app that sends an HTTP GET request to an API and displays the response data and request status.",
+          features: [
+            "Send API GET request",
+            "Display HTTP status code",
+            "Show JSON response data",
+            "Practice Fetch API usage",
+          ],
+          link: "./HTTP Get Method Practice Page/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/HTTP%20Get%20Method%20Practice%20Page"
+        },
+        {
+          title: "Keyboard Events Tracker",
+          icon: "⌨️",
+          description:
+            "A simple app that tracks keyboard input and displays the number of keys pressed and the latest key typed.",
+          features: [
+            "Tracks key presses in real time",
+            "Displays last key typed",
+            "Counts total key presses",
+            "Demonstrates JavaScript keyboard events",
+          ],
+          link: "./Keyboard Events/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Keyboard%20Events"
+        },
+        {
+          title: "Peace Timer",
+          icon: "🧘",
+          description:
+            "A simple meditation timer that lets users select a duration and start a countdown for a peaceful moment.",
+          features: [
+            "Multiple timer options (20s, 30s, 40s, 1 minute)",
+            "Live countdown display",
+            "Automatically stops when time ends",
+            "Calm meditation-style UI",
+          ],
+          link: "./Peace Timer/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Peace%20Timer"
+        },
+        {
+          title: "Random Color Generator",
+          icon: "🎨",
+          description:
+            "Generate a random background color with a single click using JavaScript.",
+          features: [
+            "Random color selection",
+            "Button click interaction",
+            "Dynamic background change",
+            "Simple and interactive UI",
+          ],
+          link: "./Random Color Generator/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Random%20Color%20Generator"
+        },
+        {
+          title: "Random Joke Generator",
+          icon: "😂",
+          description:
+            "Fetch and display a random joke from an online API with a loading spinner.",
+          features: [
+            "Fetch jokes from API",
+            "Loading spinner animation",
+            "Dynamic joke display",
+            "Interactive button",
+          ],
+          link: "./Random Joke Page/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Random%20Joke%20Page"
+        },
+        {
+          title: "Recipe Viewer",
+          icon: "🍝",
+          description:
+            "Displays a recipe with image and ingredients using dynamic JavaScript rendering.",
+          features: [
+            "Dynamic recipe data rendering",
+            "Ingredient list generation using JavaScript",
+            "Responsive layout with Tailwind CSS",
+            "Clean recipe UI design",
+          ],
+          link: "./Recipe Page/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Recipe%20Page"
+        },
+        {
+          title: "Seasons Switcher",
+          icon: "🌦️",
+          description:
+            "Switch between different seasons and view corresponding images dynamically.",
+          features: [
+            "Four season buttons",
+            "Dynamic image switching",
+            "Responsive images for small and medium screens",
+            "Interactive UI with Tailwind CSS",
+          ],
+          link: "./Seasons Switcher/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Seasons%20Switcher"
+        },
+        {
+          title: "Select Your Pet",
+          icon: "🐶",
+          description:
+            "Choose a pet from the dropdown and display its image dynamically.",
+          features: [
+            "Dropdown selection",
+            "Dynamic image change",
+            "Event listener handling",
+            "Interactive UI",
+          ],
+          link: "./Select Your Pet/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Select%20your%20Pet"
+        },
+        {
+          title: "Shopping Cart",
+          icon: "🛒",
+          description:
+            "Add or remove food items and calculate total quantity and bill dynamically.",
+          features: [
+            "Increase and decrease item quantity",
+            "Automatic total items calculation",
+            "Dynamic bill calculation",
+            "Order confirmation message",
+          ],
+          link: "./Shopping Cart/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Shopping%20Cart"
+        },
+        {
+          title: "Refresh Weather Loader",
+          icon: "🌦️",
+          description:
+            "Simulates a weather refresh with loading text using setTimeout.",
+          features: [
+            "Button click interaction",
+            "Temporary loading text",
+            "setTimeout implementation",
+            "Simple UI feedback",
+          ],
+          link: "./Showing loading text with setTimeout/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Showing%20loading%20text%20with%20setTimeout"
+        },
+        {
+          title: "Image Size Controller",
+          icon: "🖼️",
+          description: "Increase or decrease the size of an image dynamically.",
+          features: [
+            "Increase image width",
+            "Decrease image width",
+            "Dynamic width display",
+            "Size limit warnings",
+          ],
+          link: "./Sizing an Image/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Sizing%20an%20Image"
+        },
+        {
+          title: "Counter Timer",
+          icon: "⏱️",
+          description:
+            "A timer that counts every second and can be stopped using a button.",
+          features: [
+            "Automatic counter increment",
+            "setInterval usage",
+            "Stop timer button",
+            "Dynamic counter display",
+          ],
+          link: "./Stop the Counter Timer/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Stop%20the%20Counter%20Timer"
+        },
+        {
+          title: "To-Do List",
+          icon: "📝",
+          description:
+            "A simple task manager that lets users add, complete, and delete tasks.",
+          features: [
+            "Add new tasks instantly",
+            "Mark tasks as completed",
+            "Delete tasks easily",
+            "Clean responsive UI",
+          ],
+          link: "./Todo Application/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Todo%20Application"
+        },
+        {
+          title: "Like Button",
+          icon: "👍",
+          description:
+            "A fun like button that changes the image and button style when clicked.",
+          features: [
+            "Interactive like button",
+            "Image changes when liked",
+            "Toggle like and unlike",
+            "Smooth UI feedback",
+          ],
+          link: "./Toggle Like and Unlike/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Toggle%20Like%20and%20Unlike"
+        },
+        {
+          title: "Tabs - Varanasi",
+          icon: "📑",
+          description:
+            "A tab-based interface that displays different information about Varanasi.",
+          features: [
+            "Three interactive tabs",
+            "Shows content dynamically",
+            "Clean responsive layout",
+            "Built using Tailwind CSS",
+          ],
+          link: "./Tabs/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Tabs"
+        },
+        {
+          title: "Theme Switcher",
+          icon: "🌙",
+          description:
+            "Switch between light and dark themes using a simple input and button.",
+          features: [
+            "Light and dark background themes",
+            "User input based theme change",
+            "Dynamic background image",
+            "Simple UI interaction",
+          ],
+          link: "./Theme Switcher/index.html",
+          github: "https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Theme%20Switcher"
+        },
+        {
+          title: "Traffic Light",
+          icon: "🚦",
+          description:
+            "A traffic light simulation where buttons control stop, ready, and go lights.",
+          features: [
+            "Interactive traffic signal",
+            "Stop, Ready, Go buttons",
+            "Dynamic light color change",
+            "Smooth UI transitions",
+          ],
+          link: "./Traffic Light/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Traffic%20Light"
+        },
+        {
+          title: "User Profile",
+          icon: "👤",
+          description:
+            "Displays a user profile dynamically using JavaScript objects.",
+          features: [
+            "Profile image display",
+            "Dynamic name rendering",
+            "Age information",
+            "DOM element creation using JavaScript",
+          ],
+          link: "./User Profile/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/User%20Profile"
+        },
+        {
+          title: "Wikipedia Search",
+          icon: "🔎",
+          description:
+            "Search Wikipedia articles using a live API request and display results instantly.",
+          features: [
+            "Wikipedia API integration",
+            "Search results with title and description",
+            "Loading spinner while fetching data",
+            "Dynamic result rendering",
+          ],
+          link: "./Wikipedia Search Application/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Wikipedia%20Search%20Application"
+        },
+        {
+          title: "Word Cloud Generator",
+          icon: "☁️",
+          description:
+            "Generates a random word cloud where users can add new words dynamically.",
+          features: [
+            "Random word sizes",
+            "Add new words dynamically",
+            "Error handling for empty input",
+            "Dynamic DOM manipulation",
+          ],
+          link: "./Word Cloud/index.html",
+          github:"https://github.com/Ganeshbhargav/Javascript-Projects/tree/main/Word%20Cloud"
+        },
+      ];
+      const grid = document.getElementById("projectsGrid");
+      const search = document.getElementById("searchBar");
+
+      function renderProjects(list) {
+        grid.innerHTML = "";
+
+        list.forEach((project) => {
+          const card = document.createElement("a");
+
+          card.href = project.link;
+          card.target = "_blank";
+          card.rel = "noopener noreferrer";
+          card.className = "project-card";
+
+          card.innerHTML = `
+                            <div class="project-icon">${project.icon}</div>
+                            <h2 class="project-title">${project.title}</h2>
+                            <p class="project-description">${project.description}</p>
+                            <ul class="features-list">
+                            ${project.features.map((f) => `<li>${f}</li>`).join("")}
+                            </ul>
+                            <span class="view-project demo-btn">Live Demo</span>
+                            <a href="${project.github}" target="_blank" class=" github-btn">View GitHub</a>
+                            `;
+
+          grid.appendChild(card);
+        });
+      }
+
+      search.addEventListener("input", () => {
+        const value = search.value.toLowerCase();
+
+        const filtered = projects.filter(
+          (p) =>
+            p.title.toLowerCase().includes(value) ||
+            p.description.toLowerCase().includes(value),
+        );
+
+        renderProjects(filtered);
+      });
+
+      document.querySelector(".subtitle").textContent =
+        `${projects.length} JAVASCRIPT MINI PROJECTS`;
+
+      renderProjects(projects);
+    </script>
+  </body>
+</html>
+
